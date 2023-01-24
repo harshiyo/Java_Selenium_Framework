@@ -48,11 +48,12 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
           
-    - name: Deploy to GitHub Pages
+    - name: Deploy report to Github Pages
       if: always()
-      uses: JamesIves/github-pages-deploy-action@v4.4.1
-      with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: allure-results
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-results
+
   
