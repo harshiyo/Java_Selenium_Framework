@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    package-manager: maven
+    directory: "/"
+    file: "pom.xml"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 1
+    automerge:
+      enabled: true
