@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: 🚀 Continuous Integration 
 
 on:
   push:
@@ -21,3 +21,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn test
+    - name: Code Style check
+      run: |
+        apt-get update
+        apt-get install -y checkstyle
+    - name: Run checkstyle
+      run: |
+        checkstyle -c checkstyle.xml -r src/main/java
