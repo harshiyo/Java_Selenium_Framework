@@ -29,6 +29,6 @@ jobs:
     - name: Build with Maven
       run: mvn test
     - name: Run checkstyle
-      uses: nikitasavinov/checkstyle-action@0.6.0
+      uses: iwata-n/actions-checkstyle@v1.0.0
       with:
-        checkstyle_config: checkstyle.xml
+        rule: checkstyle.xml
