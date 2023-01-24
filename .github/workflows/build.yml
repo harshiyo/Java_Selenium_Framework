@@ -8,9 +8,7 @@ on:
 
 jobs:
   Test:
-
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -30,3 +28,29 @@ jobs:
          
     - name: Build with Maven
       run: mvn test
+
+  Deploy:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get Allure history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
+          ref: gh-pages
+          path: gh-pages
+
+    - name: Allure Report action from marketplace
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+        allure_results: allure-results
+        allure_history: allure-history      
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.2.2
+      with:
+          branch: gh-pages
+          folder: allure-history
+  
