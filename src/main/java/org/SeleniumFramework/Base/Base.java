@@ -1,4 +1,5 @@
 package org.SeleniumFramework.Base;
+import org.SeleniumFramework.Config.ConfigReader;
 import org.SeleniumFramework.Helpers.ExtensionHelper;
 import org.SeleniumFramework.Helpers.WebdriverHelper;
 import org.SeleniumFramework.Utils.Constants;
@@ -11,7 +12,8 @@ public abstract class Base {
     protected ExtensionHelper extensionHelper;
     @BeforeMethod
     public void preTest() {
-        driver = new WebdriverHelper().createDriver();
+        ConfigReader config = new ConfigReader();
+        driver = new WebdriverHelper().createDriver(config.getProperty("browser"));
         driver.manage().window().maximize();
         driver.get(Constants.base_url);
         extensionHelper = new ExtensionHelper(driver);
