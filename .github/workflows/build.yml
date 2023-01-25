@@ -29,8 +29,15 @@ jobs:
     - name: Build with Maven
       run: mvn test
 
-  Deploy:
+  Linting:
     needs: Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Super-Linter
+      uses: github/super-linter@v4.10.1
+  
+  Deploy:
+    needs: Linting
     runs-on: ubuntu-latest
     steps:
     - name: Get Allure history
