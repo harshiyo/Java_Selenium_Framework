@@ -1,4 +1,6 @@
-# Java Selenium Framework
+# Java Selenium Framework 
+
+![Build](https://github.com/harshiyo/Java_Selenium_Framework/actions/workflows/build.yml/badge.svg?branch=master)
 
 Welcome to the Java Selenium Framework! This framework is designed to provide a robust and efficient way to automate web application testing. It is built using Selenium WebDriver and Java, making it easy to use and extend for developers with knowledge of these technologies.
 
