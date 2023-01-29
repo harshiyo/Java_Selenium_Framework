@@ -1,8 +1,10 @@
 # Java Selenium Framework 
+
+[![Build](https://github.com/harshiyo/Java_Selenium_Framework/actions/workflows/build.yml/badge.svg)](https://github.com/harshiyo/Java_Selenium_Framework/actions/workflows/build.yml) 
+[![Language: Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://github.com/harshiyo/Java_Selenium_Framework)
+
 Welcome to the Java Selenium Framework! This framework is designed to provide a robust and efficient way to automate web application testing. It is built using Selenium WebDriver and Java, making it easy to use and extend for developers with knowledge of these technologies.
 
-![main](https://github.com/hardikptl/Gmail_Action/blob/main/.github/workflows/main.yml/badge.svg)
-[![Language: Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://github.com/harshiyo/Java_Selenium_Framework)
 
 ## Features
 - Object-oriented design with Page Object Model (POM)
